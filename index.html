@@ -70,7 +70,7 @@
 
       
 
-      const ws = new WebSocket("ws://127.0.0.1");
+      const ws = new WebSocket("ws://127.0.0.1:927");
 
       ws.onopen = function(){
           console.log("Connection is Established");
@@ -78,10 +78,6 @@
 
       debugButton.addEventListener("click", async () => {
           console.log("Debug");
-          
-
-
-
           ws.send('0');
       });
 
