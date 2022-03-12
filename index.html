@@ -70,17 +70,19 @@
 
       
 
+      const ws = new WebSocket(wsIpInput);
 
+      ws.onopen = function(){
+          console.log("Connection is Established");
+      };
 
       debugButton.addEventListener("click", async () => {
           console.log("Debug");
-          const ws = new WebSocket(wsIpInput);
+          
 
-          ws.onopen = function(){
-          console.log("Connection is Established");
-          };
 
-          ws.send("Debug");
+
+          ws.send('0');
       });
 
 
