@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="chart"></div>
+    <!-- <div id="chart"></div> -->
     <div id="container">
       <div class="init">
         <div class="form-group">
@@ -44,7 +44,7 @@
     <script src="src/aes.js" type="text/javascript"></script>
     <script src="src/bundle.js" type="text/javascript"></script>
     <script>
-      const chart = new Chart("#chart");
+      // const chart = new Chart("#chart");
       const hr = document.querySelector("#hr");
       const connectButton = document.querySelector("#connect-button");
       const keyInput = document.querySelector("#auth-key");
@@ -65,7 +65,7 @@
         window.addEventListener("heartrate", (e) => {
           console.log("Got heartrate", e.detail);
           hr.innerText = e.detail;
-          chart.update(e.detail);
+          // chart.update(e.detail);
         });
         try {
           window.miband = new MiBand5(authKey);
