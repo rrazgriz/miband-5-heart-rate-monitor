@@ -59,7 +59,7 @@
       const initBox = document.querySelector(".init");
       const hrBox = document.querySelector(".hr");
       let authKey = localStorage.getItem("auth-key");
-      const wsIpInput = document.querySelector("#ws-ip-port");
+      var wsIpInput = document.querySelector("#ws-ip-port");
       // let wsIpPort = localStorage.getItem("ws-ip-port");
       if (authKey) {
         keyInput.value = authKey;
@@ -70,7 +70,7 @@
 
       
 
-      const ws = new WebSocket(wsIpInput);
+      const ws = new WebSocket("ws://127.0.0.1");
 
       ws.onopen = function(){
           console.log("Connection is Established");
