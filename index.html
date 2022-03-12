@@ -68,13 +68,16 @@
 
       
 
-      ws.onopen = function(){
-          console.log("Connection is Established");
-      };
+
 
       debugButton.addEventListener("click", async () => {
           console.log("Debug");
           const ws = new WebSocket(wsIpPort.value);
+
+          ws.onopen = function(){
+          console.log("Connection is Established");
+          };
+
           ws.send("Debug");
       });
 
@@ -85,7 +88,9 @@
           initBox.classList.add("d-none");
           hrBox.classList.remove("d-none");
           localStorage.setItem("auth-key", authKey);
-          ws.send("0");
+          if(ws) {
+            ws.send("0");
+          }
         });
         window.addEventListener("heartrate", (e) => {
           console.log("Got heartrate", e.detail);
