@@ -74,6 +74,7 @@
 
       ws.onopen = function(){
           console.log("Connection is Established");
+          alert("Connection is Established!");
       };
 
       debugButton.addEventListener("click", async () => {
@@ -88,16 +89,15 @@
           initBox.classList.add("d-none");
           hrBox.classList.remove("d-none");
           localStorage.setItem("auth-key", authKey);
-          if(ws) {
-            ws.send("0");
-          }
         });
+
         window.addEventListener("heartrate", (e) => {
           console.log("Got heartrate", e.detail);
           hr.innerText = e.detail;
           ws.send(e.detail);
           // chart.update(e.detail);
         });
+
         try {
           window.miband = new MiBand5(authKey);
           await window.miband.init();
