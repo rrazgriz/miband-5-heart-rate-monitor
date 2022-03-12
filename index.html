@@ -60,13 +60,13 @@
       const hrBox = document.querySelector(".hr");
       let authKey = localStorage.getItem("auth-key");
       const wsIpInput = document.querySelector("#ws-ip-port");
-      let wsIpPort = localStorage.getItem("ws-ip-port");
+      // let wsIpPort = localStorage.getItem("ws-ip-port");
       if (authKey) {
         keyInput.value = authKey;
       }
-      if (wsIpInput) {
-        wsIpPort.value = wsIpInput;
-      }
+      // if (wsIpInput) {
+      //   wsIpPort.value = wsIpInput;
+      // }
 
       
 
@@ -74,7 +74,7 @@
 
       debugButton.addEventListener("click", async () => {
           console.log("Debug");
-          const ws = new WebSocket(wsIpPort.value);
+          const ws = new WebSocket(wsIpInput);
 
           ws.onopen = function(){
           console.log("Connection is Established");
